@@ -1,4 +1,6 @@
 import * as THREE from "https://unpkg.com/three@0.126.1/build/three.module.js";
+import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
+
 import * as dat from "dat.gui";
 
 //controlling the properties
@@ -71,6 +73,8 @@ function generatePlane() {
 // const mesh = new THREE.Mesh(boxGeometry, material);
 
 // scene.add(mesh);
+
+new OrbitControls(camera,renderer.domElement)
 camera.position.z = 5;
 
 const planeGeometry = new THREE.PlaneGeometry(10, 10, 10, 10);
@@ -102,7 +106,7 @@ function animate() {
   renderer.render(scene, camera);
   //   mesh.rotation.x += 0.01;
   //   mesh.rotation.y += 0.01;
-  planeMesh.rotation.y += 0.08;
+  //planeMesh.rotation.y += 0.08;
   // planeMesh.rotation.x += 0.08;
   // planeMesh.rotation.z += 0.08;
 
