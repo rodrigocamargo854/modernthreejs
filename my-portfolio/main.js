@@ -20,11 +20,11 @@ gui.add(world.plane, "height", 1, 20).onChange(() => {
   generatePlane();
 });
 
-gui.add(world.plane, "heightSegments", 1, 20).onChange(() => {
+gui.add(world.plane, "heightSegments", 1, 50).onChange(() => {
   generatePlane();
 });
 
-gui.add(world.plane, "widthSegments", 1, 20).onChange(() => {
+gui.add(world.plane, "widthSegments", 1, 50).onChange(() => {
   generatePlane();
 });
 
@@ -102,7 +102,11 @@ function animate() {
   renderer.render(scene, camera);
   //   mesh.rotation.x += 0.01;
   //   mesh.rotation.y += 0.01;
-  // planeMesh.rotation.x += 0.01;
+  planeMesh.rotation.y += 0.08;
+  // planeMesh.rotation.x += 0.08;
+  // planeMesh.rotation.z += 0.08;
+
+
 }
 
 animate();
