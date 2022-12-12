@@ -1,6 +1,7 @@
 import * as THREE from "https://unpkg.com/three@0.126.1/build/three.module.js";
 import { OrbitControls } from "https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
+import gsap from "gsap";
 
 const gui = new dat.GUI();
 const world = {
@@ -108,8 +109,6 @@ function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
   raycaster.setFromCamera(mouse, camera);
-  frame += 0.01;
-
   const { array, originalPosition, randomValues } =
     planeMesh.geometry.attributes.position;
   for (let i = 0; i < array.length; i += 3) {
@@ -127,7 +126,58 @@ function animate() {
   if (intersects.length > 0) {
     const { color } = intersects[0].object.geometry.attributes;
 
+    //vertice1
+    color.setX(intersects[0].face.a, 0.1);
+    color.setY(intersects[0].face.a, 0.5);
+    color.setZ(intersects[0].face.a, 1);
+
+    //vertice2
+    color.setX(intersects[0].face.b, 0.1);
+    color.setY(intersects[0].face.b, 0.5);
+    color.setZ(intersects[0].face.b, 1);
+
+    //vertice3
+    color.setX(intersects[0].face.c, 0.1);
+    color.setY(intersects[0].face.c, 0.5);
+    color.setZ(intersects[0].face.c, 1);
+
     intersects[0].object.geometry.attributes.color.needsUpdate = true;
+
+    const initialColor = {
+      r: 0,
+      g: 0.19,
+      b: 0.4,
+    };
+
+    const hoverColor = {
+      r: 0.1,
+      g: 0.5,
+      b: 1,
+    };
+    gsap.to(hoverColor, {
+      r: initialColor.r,
+      g: initialColor.g,
+      b: initialColor.b,
+
+      onUpdate: () => {
+        //vertice1
+        color.setX(intersects[0].face.a, hoverColor.r);
+        color.setY(intersects[0].face.a, hoverColor.g);
+        color.setZ(intersects[0].face.a, hoverColor.b);
+
+        //vertice2
+        color.setX(intersects[0].face.b, hoverColor.r);
+        color.setY(intersects[0].face.b, hoverColor.g);
+        color.setZ(intersects[0].face.b, hoverColor.b);
+
+        //vertice3
+        color.setX(intersects[0].face.c, hoverColor.r);
+        color.setY(intersects[0].face.c, hoverColor.g);
+        color.setZ(intersects[0].face.c, hoverColor.b);
+
+        color.needsUpdate = true;
+      },
+    });
   }
 }
 
