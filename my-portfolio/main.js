@@ -256,6 +256,17 @@ document.querySelector("#main-button-github").addEventListener("click", (e) => {
     y: 1000,
     ease: "power3.in",
     duration: 1.5,
-    delay:2
+    delay: 2,
+
+    //send to target link
+    onComplete: () => {
+      window.location = "https://github.com/rodrigocamargo854?tab=repositories";
+    },
   });
+});
+
+addEventListener("resize", () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMAtrix();
+  renderer.setSize(innerWidth, innerHeight);
 });
