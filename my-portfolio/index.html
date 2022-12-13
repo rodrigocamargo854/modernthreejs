@@ -27,6 +27,7 @@
   <style>
     body {
       margin: 0;
+      padding: 0;
       -webkit-font-smoothing: antialiased;
     }
     .font-mono {
@@ -42,12 +43,19 @@
         class="absolute text-white text-center"
         style="top: 50%; transform: translate(-50%, -50%); left: 50%"
       >
-        <h1 class="font-roboto text-sm uppercase traking-wide">
+        <h1
+          id="name-title"
+          class="font-roboto text-sm uppercase traking-wide opacity-0"
+          style="transform: translateY(30px)"
+        >
           Rodrigo Camargo
-          <p class="font-exo text-3xl"><strong>LIFE LONG LEARNING</strong></p>
+          <p id="main-paragraph" class="font-exo text-3xl opacity-0">
+            <strong>LIFE LONG LEARNING</strong>
+          </p>
           <a
+            id="main-button-github"
             href="https://github.com/rodrigocamargo854?tab=repositories"
-            class="border px-4 py-4 rounded-lg text-sm font-space-mono uppercase mt-12 hover:bg-white hover:text-gray-800 inline-block"
+            class="border px-4 py-4 rounded-lg text-sm font-space-mono uppercase mt-12 hover:bg-white hover:text-gray-800 inline-block opacity-0"
           >
             view work
           </a>

@@ -206,7 +206,7 @@ function animate() {
     });
   }
 
-  stars.rotation.x += 0.01;
+  stars.rotation.x += 0.001;
 }
 
 animate();
@@ -214,4 +214,25 @@ animate();
 addEventListener("mousemove", (event) => {
   mouse.x = (event.clientX / innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+});
+
+gsap.to("#name-title", {
+  opacity: 1,
+  duration: 1.5,
+  y: 0,
+  ease: "expo",
+});
+
+gsap.to("#main-paragraph", {
+  opacity: 1,
+  duration: 1.5,
+  delay: 0.3,
+  y: 0,
+});
+
+gsap.to("#main-button-github", {
+  opacity: 1,
+  duration: 1.5,
+  delay: 0.6,
+  y: 0,
 });
