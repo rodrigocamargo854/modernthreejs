@@ -5,14 +5,55 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:ital,wght@0,100;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <style>
     body {
       margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono {
+      font-family: "Space mono", sans-serif;
+    }
+    .font-exo {
+      font-family: "Exo 2", sans-serif;
     }
   </style>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div
+        class="absolute text-white text-center"
+        style="top: 50%; transform: translate(-50%, -50%); left: 50%"
+      >
+        <h1 class="font-roboto text-sm uppercase traking-wide">
+          Rodrigo Camargo
+          <p class="font-exo text-3xl"><strong>LIFE LONG LEARNING</strong></p>
+          <a
+            href="https://github.com/rodrigocamargo854?tab=repositories"
+            class="border px-4 py-4 rounded-lg text-sm font-space-mono uppercase mt-12 hover:bg-white hover:text-gray-800 inline-block"
+          >
+            view work
+          </a>
+        </h1>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
